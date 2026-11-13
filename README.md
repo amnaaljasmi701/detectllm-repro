@@ -32,12 +32,12 @@ type → T4 GPU* and run all cells. The notebook
 ## Fully automatic run on GitHub Actions (no GPU needed)
 
 `.github/workflows/reproduce.yml` runs the complete suite on free GitHub-hosted CPU runners
-(4 vCPU, 16 GB RAM) for public repositories. It runs the unit tests, a smoke run, then 22 parallel
-jobs (one per group of runs that share generated data), and finally merges and aggregates the
-results and commits them to the `results` branch. Start it from *Actions → Reproduce DetectLLM →
-Run workflow*, or push a commit whose message contains `[run]`. On CPU the models run in fp32,
-as in the original paper; the perturbation experiment is reduced to 50 pairs and ≤ 10
-perturbations (`--preset ci`).
+(4 vCPU, 16 GB RAM) for public repositories. It runs the unit tests, then 19 jobs (one per group
+of runs that share generated data), and finally merges and aggregates the results and commits
+them to the `results` branch. Start it from *Actions → Reproduce DetectLLM → Run workflow*, or push
+a commit whose message contains `[run]`. On CPU the models run in fp32, as in the original paper.
+CPU time limits the `ci` preset to 100 pairs per cell, 30 pairs × ≤ 10 perturbations for E2,
+seed variance on XSum and three decoding variants (`python scripts/run.py --preset ci --list`).
 
 ## Command line
 

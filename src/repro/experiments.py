@@ -24,11 +24,13 @@ PRESETS = {
                   datasets=DATASETS, ar_models=AR_MODELS, seeds=[1, 2], ar_n=100),
     "full": dict(n=300, n_pert_texts=100, n_pert_list=(1, 5, 10, 20), mask="t5-large", models=PAPER_MODELS,
                  datasets=DATASETS, ar_models=AR_MODELS, seeds=[1, 2], ar_n=300),
-    # CPU-only GitHub Actions runners (4 vCPU, 16 GB RAM, 6 h/job): same as "full" except the
-    # perturbation experiment, which is ~20x more expensive than the rest, and no fp16 test
-    # (fp16 is not a meaningful CPU setting).
-    "ci": dict(n=300, n_pert_texts=50, n_pert_list=(1, 5, 10), mask="t5-large", models=PAPER_MODELS,
-               datasets=DATASETS, ar_models=AR_MODELS, seeds=[1, 2], ar_n=300, no_precision=True),
+    # CPU-only GitHub Actions runners (4 vCPU, 16 GB RAM, 6 h/job, 5 concurrent jobs on a new
+    # free account). Measured cost on these runners: ~2 h of CPU per 300 GPT2-xl pairs, so the
+    # budget allows 100 pairs per cell, 30 pairs x 10 perturbations for E2, seed variance on XSum,
+    # three decoding variants, and no fp16 test (fp16 is not a meaningful CPU setting).
+    "ci": dict(n=100, n_pert_texts=30, n_pert_list=(1, 5, 10), mask="t5-large", models=PAPER_MODELS,
+               datasets=DATASETS, ar_models=AR_MODELS, seeds=[1, 2], seed_datasets=["xsum"], ar_n=100,
+               no_precision=True, decodings=["pure", "topp0.96", "T0.7"]),
 }
 
 SHORT = {"gpt2-xl": "gptxl", "gpt2": "gpt2", "EleutherAI/gpt-neo-2.7B": "neo", "facebook/opt-2.7b": "opt"}
@@ -65,14 +67,15 @@ def build(preset: str = "full", only: list[str] | None = None, shard: str | None
 
     # E3 - seeds (seed 0 is E1)
     for s in P["seeds"]:
-        for d in P["datasets"][:2]:
+        for d in P.get("seed_datasets", P["datasets"][:2]):
             cfgs.append(RunCfg("E3", d, ref, n_samples=n, seed=s))
 
     # E4 - sensitivity on XSum
     d0 = P["datasets"][0]
     for (T, k, p, tag) in [(1.0, 0, 1.0, "pure"), (1.0, 40, 1.0, "topk40"), (1.0, 0, 0.96, "topp0.96"),
                            (0.7, 50, 1.0, "T0.7")]:
-        cfgs.append(RunCfg("E4-decoding", d0, ref, n_samples=n, temperature=T, top_k=k, top_p=p, tag=tag))
+        if tag in P.get("decodings", [tag]):
+            cfgs.append(RunCfg("E4-decoding", d0, ref, n_samples=n, temperature=T, top_k=k, top_p=p, tag=tag))
     for w in [25, 50, 100]:
         for d in P["datasets"]:
             cfgs.append(RunCfg("E4-length", d, ref, n_samples=n, truncate_words=w, tag=f"{w}w"))

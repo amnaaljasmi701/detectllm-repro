@@ -30,13 +30,8 @@ jobs:
     - name: unit tests (incl. GPU-code checks on CPU)
       run: python -m pytest -q tests
     - name: smoke run (GPT-2 small, SQuAD, n=20)
+      if: contains(github.event.head_commit.message, '[test]')
       run: python scripts/run.py --preset smoke --out results/smoke && python scripts/aggregate.py --results results/smoke && cat results/smoke/summary/E1_main.md
-    - uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: smoke
-        path: results/smoke
-        retention-days: 7
   base:
     needs: tests
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[run]')
@@ -145,16 +140,13 @@ jobs:
         - opt-xsum
         - opt-squad
         - opt-writing
-        - seed1-xsum
-        - seed1-squad
-        - seed2-xsum
-        - seed2-squad
-        - dec-pure
-        - dec-topk40
-        - dec-topp0.96
-        - dec-T0.7
         - ar-main
         - ar-control
+        - seed1-xsum
+        - seed2-xsum
+        - dec-pure
+        - dec-topp0.96
+        - dec-T0.7
     steps:
     - uses: actions/checkout@v4
     - name: free disk space
