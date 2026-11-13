@@ -29,6 +29,20 @@ type → T4 GPU* and run all cells. The notebook
    disconnect loses nothing (re-running a cell skips finished runs),
 5. builds every table, figure and the error analysis, and zips them for download.
 
+## Results at a glance (GitHub Actions run 43448901855, CPU, 100 pairs per cell)
+
+| | Finding |
+|---|---|
+| **C1 reproduced** | LRR is the best perturbation-free detector in 9/9 model × dataset settings and in 3/3 seeds. Our 45 AUROCs correlate r = 0.995 with Table 1 of the paper; 43/45 published values lie inside our 95% CIs. Mean gain over log-rank: 2.5 points (paper, same models: 1.9); significant in 5/9 settings. |
+| **C2 reproduced** | NPR > DetectGPT at 1, 5 and 10 perturbations on all three datasets (+3.2 to +11.8 at 10). But LRR, with no perturbations, is statistically indistinguishable from NPR. |
+| **Decoding matters most** | The original code silently samples with top-k 50. With the pure sampling the paper describes, LRR drops from 92.7 to **23.1** AUROC (below chance). |
+| **Length** | At 25 words every detector is at chance; 100 words give 89–95 AUROC. |
+| **Low FPR** | At 1% FPR, LRR catches 38–81% of machine texts (best of all criteria everywhere). |
+| **Arabic** | White-box LRR: 99.5 (AraGPT2) and 86.3 (Qwen2.5, vs 65.4 for log-likelihood). Cross-model: 63.8 and 23.9. |
+
+Tables and figures: [`results/full/summary/`](results/full/summary/). Per-text scores and
+generated texts: the [`results`](../../tree/results) branch.
+
 ## Fully automatic run on GitHub Actions (no GPU needed)
 
 `.github/workflows/reproduce.yml` runs the complete suite on free GitHub-hosted CPU runners

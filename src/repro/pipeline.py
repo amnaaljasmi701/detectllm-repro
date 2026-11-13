@@ -289,7 +289,8 @@ class Runner:
         with open(os.path.join(self.out, "scores", rid + ".csv"), "w", newline="") as f:
             w = csv.writer(f)
             cols = list(score_cols)
-            w.writerow(["idx", "label", "n_tokens", "ll", "logrank", *cols, "text"])
+            # raw statistics are prefixed with "stat_" so they cannot clash with the criteria columns
+            w.writerow(["idx", "label", "n_tokens", "stat_ll", "stat_logrank", *cols, "text"])
             for lab, side, stats in [(0, "original", H), (1, "sampled", Mc)]:
                 k = 0 if lab == 0 else 1
                 for i, s in enumerate(stats):

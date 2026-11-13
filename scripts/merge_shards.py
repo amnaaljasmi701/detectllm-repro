@@ -19,7 +19,7 @@ a = ap.parse_args()
 os.makedirs(a.out, exist_ok=True)
 for sub in ["data", "scores"]:
     os.makedirs(os.path.join(a.out, sub), exist_ok=True)
-seen, rows, timing, errors = set(), [], [], []
+seen, seen_t, rows, timing, errors = set(), set(), [], [], []
 for d in sorted(glob.glob(os.path.join(a.shards, "*"))):
     shard = os.path.basename(d).replace("shard-", "")
     rp = os.path.join(d, "results.jsonl")
@@ -38,6 +38,10 @@ for d in sorted(glob.glob(os.path.join(a.shards, "*"))):
         for line in open(tp):
             if line.strip():
                 t = json.loads(line)
+                k = (t["stage"], t["what"], t["seconds"])   # E2 jobs inherit the base job's log
+                if k in seen_t:
+                    continue
+                seen_t.add(k)
                 t["shard"] = shard
                 timing.append(t)
     ep = os.path.join(d, "errors.log")

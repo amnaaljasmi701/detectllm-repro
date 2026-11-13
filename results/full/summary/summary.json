@@ -1,0 +1,1924 @@
+{
+ "E1_paired": [
+  {
+   "exp": "E1",
+   "dataset": "SQuAD",
+   "generator": "GPT2-xl",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 2.71,
+   "95% CI": "[0.64, 5.04]",
+   "P(LRR not better)": 0.005,
+   "significant": true
+  },
+  {
+   "exp": "E1",
+   "dataset": "WritingPrompts",
+   "generator": "GPT2-xl",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 0.82,
+   "95% CI": "[-0.08, 1.89]",
+   "P(LRR not better)": 0.038,
+   "significant": false
+  },
+  {
+   "exp": "E1",
+   "dataset": "XSum",
+   "generator": "GPT2-xl",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 0.66,
+   "95% CI": "[-1.77, 2.95]",
+   "P(LRR not better)": 0.281,
+   "significant": false
+  },
+  {
+   "exp": "E1",
+   "dataset": "SQuAD",
+   "generator": "Neo-2.7B",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 6.55,
+   "95% CI": "[3.97, 9.51]",
+   "P(LRR not better)": 0.0,
+   "significant": true
+  },
+  {
+   "exp": "E1",
+   "dataset": "WritingPrompts",
+   "generator": "Neo-2.7B",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 1.09,
+   "95% CI": "[-0.27, 2.90]",
+   "P(LRR not better)": 0.069,
+   "significant": false
+  },
+  {
+   "exp": "E1",
+   "dataset": "XSum",
+   "generator": "Neo-2.7B",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 4.03,
+   "95% CI": "[1.72, 6.39]",
+   "P(LRR not better)": 0.0,
+   "significant": true
+  },
+  {
+   "exp": "E1",
+   "dataset": "SQuAD",
+   "generator": "OPT-2.7B",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 4.15,
+   "95% CI": "[1.73, 6.79]",
+   "P(LRR not better)": 0.0,
+   "significant": true
+  },
+  {
+   "exp": "E1",
+   "dataset": "WritingPrompts",
+   "generator": "OPT-2.7B",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 2.56,
+   "95% CI": "[0.94, 4.54]",
+   "P(LRR not better)": 0.001,
+   "significant": true
+  },
+  {
+   "exp": "E1",
+   "dataset": "XSum",
+   "generator": "OPT-2.7B",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 0.27,
+   "95% CI": "[-2.48, 2.98]",
+   "P(LRR not better)": 0.428,
+   "significant": false
+  },
+  {
+   "exp": "E3",
+   "dataset": "XSum",
+   "generator": "GPT2-xl",
+   "seed": 1,
+   "best other": "logrank",
+   "LRR - best x100": 3.03,
+   "95% CI": "[0.35, 5.90]",
+   "P(LRR not better)": 0.017,
+   "significant": true
+  },
+  {
+   "exp": "E3",
+   "dataset": "XSum",
+   "generator": "GPT2-xl",
+   "seed": 2,
+   "best other": "logrank",
+   "LRR - best x100": 1.97,
+   "95% CI": "[-0.63, 4.44]",
+   "P(LRR not better)": 0.076,
+   "significant": false
+  },
+  {
+   "exp": "E5-arabic",
+   "dataset": "Arabic Wikipedia",
+   "generator": "Qwen2.5-1.5B",
+   "seed": 0,
+   "best other": "rank",
+   "LRR - best x100": -0.11,
+   "95% CI": "[-5.15, 4.44]",
+   "P(LRR not better)": 0.55,
+   "significant": false
+  },
+  {
+   "exp": "E5-arabic",
+   "dataset": "Arabic Wikipedia",
+   "generator": "AraGPT2-M",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 0.34,
+   "95% CI": "[-0.45, 1.52]",
+   "P(LRR not better)": 0.289,
+   "significant": false
+  },
+  {
+   "exp": "E5-control",
+   "dataset": "XSum",
+   "generator": "Qwen2.5-1.5B",
+   "seed": 0,
+   "best other": "logrank",
+   "LRR - best x100": 5.64,
+   "95% CI": "[2.24, 9.27]",
+   "P(LRR not better)": 0.0,
+   "significant": true
+  }
+ ],
+ "E1": [
+  {
+   "dataset": "SQuAD",
+   "model": "GPT2-xl",
+   "method": "likelihood",
+   "ours": 91.55,
+   "95% CI": "[87.8, 94.8]",
+   "paper": 90.72,
+   "diff": 0.83,
+   "TPR@1%FPR": 15.0,
+   "TPR@5%FPR": 48.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "GPT2-xl",
+   "method": "rank",
+   "ours": 82.01,
+   "95% CI": "[78.37, 86.2]",
+   "paper": 83.46,
+   "diff": -1.45,
+   "TPR@1%FPR": 45.0,
+   "TPR@5%FPR": 55.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "GPT2-xl",
+   "method": "logrank",
+   "ours": 95.12,
+   "95% CI": "[92.11, 97.44]",
+   "paper": 94.33,
+   "diff": 0.79,
+   "TPR@1%FPR": 25.0,
+   "TPR@5%FPR": 73.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "GPT2-xl",
+   "method": "entropy",
+   "ours": 55.36,
+   "95% CI": "[50.0, 60.88]",
+   "paper": 57.97,
+   "diff": -2.61,
+   "TPR@1%FPR": 0.0,
+   "TPR@5%FPR": 7.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "GPT2-xl",
+   "method": "LRR",
+   "ours": 97.83,
+   "95% CI": "[95.92, 99.32]",
+   "paper": 97.42,
+   "diff": 0.41,
+   "TPR@1%FPR": 58.0,
+   "TPR@5%FPR": 91.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "GPT2-xl",
+   "method": "likelihood",
+   "ours": 96.28,
+   "95% CI": "[93.84, 98.38]",
+   "paper": 96.71,
+   "diff": -0.43,
+   "TPR@1%FPR": 49.0,
+   "TPR@5%FPR": 66.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "GPT2-xl",
+   "method": "rank",
+   "ours": 90.91,
+   "95% CI": "[87.7, 93.94]",
+   "paper": 87.62,
+   "diff": 3.29,
+   "TPR@1%FPR": 60.0,
+   "TPR@5%FPR": 67.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "GPT2-xl",
+   "method": "logrank",
+   "ours": 97.89,
+   "95% CI": "[96.28, 99.23]",
+   "paper": 98.02,
+   "diff": -0.13,
+   "TPR@1%FPR": 63.0,
+   "TPR@5%FPR": 82.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "GPT2-xl",
+   "method": "entropy",
+   "ours": 33.59,
+   "95% CI": "[27.26, 40.6]",
+   "paper": 36.45,
+   "diff": -2.86,
+   "TPR@1%FPR": 0.0,
+   "TPR@5%FPR": 0.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "GPT2-xl",
+   "method": "LRR",
+   "ours": 98.71,
+   "95% CI": "[97.6, 99.62]",
+   "paper": 98.34,
+   "diff": 0.37,
+   "TPR@1%FPR": 81.0,
+   "TPR@5%FPR": 94.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "GPT2-xl",
+   "method": "likelihood",
+   "ours": 89.55,
+   "95% CI": "[86.01, 93.28]",
+   "paper": 89.16,
+   "diff": 0.39,
+   "TPR@1%FPR": 37.0,
+   "TPR@5%FPR": 52.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "GPT2-xl",
+   "method": "rank",
+   "ours": 80.29,
+   "95% CI": "[76.33, 84.99]",
+   "paper": 79.79,
+   "diff": 0.5,
+   "TPR@1%FPR": 17.0,
+   "TPR@5%FPR": 51.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "GPT2-xl",
+   "method": "logrank",
+   "ours": 92.08,
+   "95% CI": "[88.75, 95.34]",
+   "paper": 91.75,
+   "diff": 0.33,
+   "TPR@1%FPR": 51.0,
+   "TPR@5%FPR": 61.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "GPT2-xl",
+   "method": "entropy",
+   "ours": 53.87,
+   "95% CI": "[48.92, 59.47]",
+   "paper": 56.78,
+   "diff": -2.91,
+   "TPR@1%FPR": 3.0,
+   "TPR@5%FPR": 12.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "GPT2-xl",
+   "method": "LRR",
+   "ours": 92.74,
+   "95% CI": "[89.27, 96.14]",
+   "paper": 93.47,
+   "diff": -0.73,
+   "TPR@1%FPR": 57.0,
+   "TPR@5%FPR": 73.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "Neo-2.7B",
+   "method": "likelihood",
+   "ours": 85.7,
+   "95% CI": "[80.71, 89.82]",
+   "paper": 84.18,
+   "diff": 1.52,
+   "TPR@1%FPR": 18.0,
+   "TPR@5%FPR": 25.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "Neo-2.7B",
+   "method": "rank",
+   "ours": 79.74,
+   "95% CI": "[75.75, 83.91]",
+   "paper": 79.77,
+   "diff": -0.03,
+   "TPR@1%FPR": 38.0,
+   "TPR@5%FPR": 50.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "Neo-2.7B",
+   "method": "logrank",
+   "ours": 90.68,
+   "95% CI": "[86.7, 94.0]",
+   "paper": 89.52,
+   "diff": 1.16,
+   "TPR@1%FPR": 29.0,
+   "TPR@5%FPR": 46.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "Neo-2.7B",
+   "method": "entropy",
+   "ours": 55.09,
+   "95% CI": "[48.67, 61.1]",
+   "paper": 58.48,
+   "diff": -3.39,
+   "TPR@1%FPR": 2.0,
+   "TPR@5%FPR": 7.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "Neo-2.7B",
+   "method": "LRR",
+   "ours": 97.23,
+   "95% CI": "[95.42, 98.75]",
+   "paper": 95.74,
+   "diff": 1.49,
+   "TPR@1%FPR": 69.0,
+   "TPR@5%FPR": 85.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "Neo-2.7B",
+   "method": "likelihood",
+   "ours": 95.15,
+   "95% CI": "[92.02, 97.8]",
+   "paper": 95.63,
+   "diff": -0.48,
+   "TPR@1%FPR": 24.0,
+   "TPR@5%FPR": 66.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "Neo-2.7B",
+   "method": "rank",
+   "ours": 85.53,
+   "95% CI": "[81.73, 89.61]",
+   "paper": 82.79,
+   "diff": 2.74,
+   "TPR@1%FPR": 52.0,
+   "TPR@5%FPR": 64.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "Neo-2.7B",
+   "method": "logrank",
+   "ours": 96.29,
+   "95% CI": "[93.58, 98.46]",
+   "paper": 97.15,
+   "diff": -0.86,
+   "TPR@1%FPR": 36.0,
+   "TPR@5%FPR": 69.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "Neo-2.7B",
+   "method": "entropy",
+   "ours": 28.28,
+   "95% CI": "[21.5, 35.26]",
+   "paper": 34.07,
+   "diff": -5.79,
+   "TPR@1%FPR": 0.0,
+   "TPR@5%FPR": 0.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "Neo-2.7B",
+   "method": "LRR",
+   "ours": 97.38,
+   "95% CI": "[94.98, 99.09]",
+   "paper": 98.02,
+   "diff": -0.64,
+   "TPR@1%FPR": 64.0,
+   "TPR@5%FPR": 87.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "Neo-2.7B",
+   "method": "likelihood",
+   "ours": 86.76,
+   "95% CI": "[82.73, 90.74]",
+   "paper": 87.69,
+   "diff": -0.93,
+   "TPR@1%FPR": 22.0,
+   "TPR@5%FPR": 36.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "Neo-2.7B",
+   "method": "rank",
+   "ours": 77.85,
+   "95% CI": "[73.99, 82.26]",
+   "paper": 77.87,
+   "diff": -0.02,
+   "TPR@1%FPR": 20.0,
+   "TPR@5%FPR": 47.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "Neo-2.7B",
+   "method": "logrank",
+   "ours": 91.24,
+   "95% CI": "[88.06, 94.29]",
+   "paper": 90.79,
+   "diff": 0.45,
+   "TPR@1%FPR": 41.0,
+   "TPR@5%FPR": 52.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "Neo-2.7B",
+   "method": "entropy",
+   "ours": 59.58,
+   "95% CI": "[54.04, 65.26]",
+   "paper": 55.14,
+   "diff": 4.44,
+   "TPR@1%FPR": 5.0,
+   "TPR@5%FPR": 12.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "Neo-2.7B",
+   "method": "LRR",
+   "ours": 95.27,
+   "95% CI": "[92.86, 97.53]",
+   "paper": 92.24,
+   "diff": 3.03,
+   "TPR@1%FPR": 56.0,
+   "TPR@5%FPR": 74.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "OPT-2.7B",
+   "method": "likelihood",
+   "ours": 87.4,
+   "95% CI": "[83.14, 91.3]",
+   "paper": 87.84,
+   "diff": -0.44,
+   "TPR@1%FPR": 24.0,
+   "TPR@5%FPR": 41.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "OPT-2.7B",
+   "method": "rank",
+   "ours": 80.75,
+   "95% CI": "[76.68, 85.11]",
+   "paper": 81.85,
+   "diff": -1.1,
+   "TPR@1%FPR": 32.0,
+   "TPR@5%FPR": 46.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "OPT-2.7B",
+   "method": "logrank",
+   "ours": 91.47,
+   "95% CI": "[87.97, 94.47]",
+   "paper": 91.76,
+   "diff": -0.29,
+   "TPR@1%FPR": 32.0,
+   "TPR@5%FPR": 52.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "OPT-2.7B",
+   "method": "entropy",
+   "ours": 52.75,
+   "95% CI": "[46.88, 58.68]",
+   "paper": 53.29,
+   "diff": -0.54,
+   "TPR@1%FPR": 3.0,
+   "TPR@5%FPR": 5.0,
+   "n": 100
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "OPT-2.7B",
+   "method": "LRR",
+   "ours": 95.62,
+   "95% CI": "[93.23, 97.58]",
+   "paper": 95.89,
+   "diff": -0.27,
+   "TPR@1%FPR": 54.0,
+   "TPR@5%FPR": 66.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "OPT-2.7B",
+   "method": "likelihood",
+   "ours": 92.92,
+   "95% CI": "[89.19, 96.28]",
+   "paper": 95.05,
+   "diff": -2.13,
+   "TPR@1%FPR": 17.0,
+   "TPR@5%FPR": 52.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "OPT-2.7B",
+   "method": "rank",
+   "ours": 87.45,
+   "95% CI": "[83.44, 91.74]",
+   "paper": 83.89,
+   "diff": 3.56,
+   "TPR@1%FPR": 46.0,
+   "TPR@5%FPR": 69.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "OPT-2.7B",
+   "method": "logrank",
+   "ours": 94.76,
+   "95% CI": "[91.62, 97.41]",
+   "paper": 96.32,
+   "diff": -1.56,
+   "TPR@1%FPR": 28.0,
+   "TPR@5%FPR": 63.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "OPT-2.7B",
+   "method": "entropy",
+   "ours": 42.56,
+   "95% CI": "[35.55, 49.47]",
+   "paper": 39.75,
+   "diff": 2.81,
+   "TPR@1%FPR": 0.0,
+   "TPR@5%FPR": 0.0,
+   "n": 100
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "OPT-2.7B",
+   "method": "LRR",
+   "ours": 97.32,
+   "95% CI": "[95.16, 98.93]",
+   "paper": 96.45,
+   "diff": 0.87,
+   "TPR@1%FPR": 51.0,
+   "TPR@5%FPR": 88.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "OPT-2.7B",
+   "method": "likelihood",
+   "ours": 88.79,
+   "95% CI": "[84.76, 92.71]",
+   "paper": 86.98,
+   "diff": 1.81,
+   "TPR@1%FPR": 17.0,
+   "TPR@5%FPR": 50.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "OPT-2.7B",
+   "method": "rank",
+   "ours": 75.17,
+   "95% CI": "[71.63, 79.74]",
+   "paper": 76.07,
+   "diff": -0.9,
+   "TPR@1%FPR": 13.0,
+   "TPR@5%FPR": 43.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "OPT-2.7B",
+   "method": "logrank",
+   "ours": 91.61,
+   "95% CI": "[87.94, 95.02]",
+   "paper": 89.18,
+   "diff": 2.43,
+   "TPR@1%FPR": 20.0,
+   "TPR@5%FPR": 52.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "OPT-2.7B",
+   "method": "entropy",
+   "ours": 45.96,
+   "95% CI": "[41.09, 51.14]",
+   "paper": 50.34,
+   "diff": -4.38,
+   "TPR@1%FPR": 2.0,
+   "TPR@5%FPR": 6.0,
+   "n": 100
+  },
+  {
+   "dataset": "XSum",
+   "model": "OPT-2.7B",
+   "method": "LRR",
+   "ours": 91.88,
+   "95% CI": "[87.93, 95.22]",
+   "paper": 88.7,
+   "diff": 3.18,
+   "TPR@1%FPR": 38.0,
+   "TPR@5%FPR": 51.0,
+   "n": 100
+  }
+ ],
+ "E1_claim": [
+  {
+   "dataset": "SQuAD",
+   "model": "GPT2-xl",
+   "LRR ours": 97.83,
+   "best other ours": 95.12,
+   "gain ours": 2.71,
+   "LRR paper": 97.42,
+   "best other paper": 94.33,
+   "gain paper": 3.09,
+   "LRR is best (ours)": true
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "Neo-2.7B",
+   "LRR ours": 97.23,
+   "best other ours": 90.68,
+   "gain ours": 6.55,
+   "LRR paper": 95.74,
+   "best other paper": 89.52,
+   "gain paper": 6.22,
+   "LRR is best (ours)": true
+  },
+  {
+   "dataset": "SQuAD",
+   "model": "OPT-2.7B",
+   "LRR ours": 95.62,
+   "best other ours": 91.47,
+   "gain ours": 4.15,
+   "LRR paper": 95.89,
+   "best other paper": 91.76,
+   "gain paper": 4.13,
+   "LRR is best (ours)": true
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "GPT2-xl",
+   "LRR ours": 98.71,
+   "best other ours": 97.89,
+   "gain ours": 0.82,
+   "LRR paper": 98.34,
+   "best other paper": 98.02,
+   "gain paper": 0.32,
+   "LRR is best (ours)": true
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "Neo-2.7B",
+   "LRR ours": 97.38,
+   "best other ours": 96.29,
+   "gain ours": 1.09,
+   "LRR paper": 98.02,
+   "best other paper": 97.15,
+   "gain paper": 0.87,
+   "LRR is best (ours)": true
+  },
+  {
+   "dataset": "WritingPrompts",
+   "model": "OPT-2.7B",
+   "LRR ours": 97.32,
+   "best other ours": 94.76,
+   "gain ours": 2.56,
+   "LRR paper": 96.45,
+   "best other paper": 96.32,
+   "gain paper": 0.13,
+   "LRR is best (ours)": true
+  },
+  {
+   "dataset": "XSum",
+   "model": "GPT2-xl",
+   "LRR ours": 92.74,
+   "best other ours": 92.08,
+   "gain ours": 0.66,
+   "LRR paper": 93.47,
+   "best other paper": 91.75,
+   "gain paper": 1.72,
+   "LRR is best (ours)": true
+  },
+  {
+   "dataset": "XSum",
+   "model": "Neo-2.7B",
+   "LRR ours": 95.27,
+   "best other ours": 91.24,
+   "gain ours": 4.03,
+   "LRR paper": 92.24,
+   "best other paper": 90.79,
+   "gain paper": 1.45,
+   "LRR is best (ours)": true
+  },
+  {
+   "dataset": "XSum",
+   "model": "OPT-2.7B",
+   "LRR ours": 91.88,
+   "best other ours": 91.61,
+   "gain ours": 0.27,
+   "LRR paper": 88.7,
+   "best other paper": 89.18,
+   "gain paper": -0.48,
+   "LRR is best (ours)": true
+  }
+ ],
+ "E2": [
+  {
+   "dataset": "SQuAD",
+   "method": "likelihood@pert_subset",
+   "n_pert": 0,
+   "auroc": 91.11,
+   "auroc_lo": 82.89,
+   "auroc_hi": 97.33,
+   "tpr@1%fpr": 30.0,
+   "n": 30
+  },
+  {
+   "dataset": "SQuAD",
+   "method": "logrank@pert_subset",
+   "n_pert": 0,
+   "auroc": 94.67,
+   "auroc_lo": 88.67,
+   "auroc_hi": 98.67,
+   "tpr@1%fpr": 40.0,
+   "n": 30
+  },
+  {
+   "dataset": "SQuAD",
+   "method": "LRR@pert_subset",
+   "n_pert": 0,
+   "auroc": 95.22,
+   "auroc_lo": 89.55,
+   "auroc_hi": 99.33,
+   "tpr@1%fpr": 43.33,
+   "n": 30
+  },
+  {
+   "dataset": "SQuAD",
+   "method": "DetectGPT",
+   "n_pert": 1,
+   "auroc": 83.89,
+   "auroc_lo": 72.22,
+   "auroc_hi": 93.33,
+   "tpr@1%fpr": 33.33,
+   "n": 30
+  },
+  {
+   "dataset": "SQuAD",
+   "method": "NPR",
+   "n_pert": 1,
+   "auroc": 87.11,
+   "auroc_lo": 78.11,
+   "auroc_hi": 94.78,
+   "tpr@1%fpr": 53.33,
+   "n": 30
+  },
+  {
+   "dataset": "SQuAD",
+   "method": "DetectGPT",
+   "n_pert": 5,
+   "auroc": 89.22,
+   "auroc_lo": 82.33,
+   "auroc_hi": 95.34,
+   "tpr@1%fpr": 40.0,
+   "n": 30
+  },
+  {
+   "dataset": "SQuAD",
+   "method": "NPR",
+   "n_pert": 5,
+   "auroc": 92.89,
+   "auroc_lo": 87.66,
+   "auroc_hi": 98.0,
+   "tpr@1%fpr": 40.0,
+   "n": 30
+  },
+  {
+   "dataset": "SQuAD",
+   "method": "DetectGPT",
+   "n_pert": 10,
+   "auroc": 90.67,
+   "auroc_lo": 81.0,
+   "auroc_hi": 97.56,
+   "tpr@1%fpr": 10.0,
+   "n": 30
+  },
+  {
+   "dataset": "SQuAD",
+   "method": "NPR",
+   "n_pert": 10,
+   "auroc": 94.44,
+   "auroc_lo": 88.89,
+   "auroc_hi": 99.0,
+   "tpr@1%fpr": 23.33,
+   "n": 30
+  },
+  {
+   "dataset": "WritingPrompts",
+   "method": "likelihood@pert_subset",
+   "n_pert": 0,
+   "auroc": 96.22,
+   "auroc_lo": 91.0,
+   "auroc_hi": 100.0,
+   "tpr@1%fpr": 53.33,
+   "n": 30
+  },
+  {
+   "dataset": "WritingPrompts",
+   "method": "logrank@pert_subset",
+   "n_pert": 0,
+   "auroc": 97.11,
+   "auroc_lo": 92.55,
+   "auroc_hi": 100.0,
+   "tpr@1%fpr": 63.33,
+   "n": 30
+  },
+  {
+   "dataset": "WritingPrompts",
+   "method": "LRR@pert_subset",
+   "n_pert": 0,
+   "auroc": 98.11,
+   "auroc_lo": 95.33,
+   "auroc_hi": 100.0,
+   "tpr@1%fpr": 66.67,
+   "n": 30
+  },
+  {
+   "dataset": "WritingPrompts",
+   "method": "DetectGPT",
+   "n_pert": 1,
+   "auroc": 86.0,
+   "auroc_lo": 75.78,
+   "auroc_hi": 94.0,
+   "tpr@1%fpr": 23.33,
+   "n": 30
+  },
+  {
+   "dataset": "WritingPrompts",
+   "method": "NPR",
+   "n_pert": 1,
+   "auroc": 91.89,
+   "auroc_lo": 84.22,
+   "auroc_hi": 98.11,
+   "tpr@1%fpr": 43.33,
+   "n": 30
+  },
+  {
+   "dataset": "WritingPrompts",
+   "method": "DetectGPT",
+   "n_pert": 5,
+   "auroc": 90.78,
+   "auroc_lo": 81.11,
+   "auroc_hi": 97.89,
+   "tpr@1%fpr": 23.33,
+   "n": 30
+  },
+  {
+   "dataset": "WritingPrompts",
+   "method": "NPR",
+   "n_pert": 5,
+   "auroc": 97.22,
+   "auroc_lo": 93.44,
+   "auroc_hi": 99.89,
+   "tpr@1%fpr": 66.67,
+   "n": 30
+  },
+  {
+   "dataset": "WritingPrompts",
+   "method": "DetectGPT",
+   "n_pert": 10,
+   "auroc": 94.89,
+   "auroc_lo": 90.33,
+   "auroc_hi": 98.56,
+   "tpr@1%fpr": 66.67,
+   "n": 30
+  },
+  {
+   "dataset": "WritingPrompts",
+   "method": "NPR",
+   "n_pert": 10,
+   "auroc": 98.11,
+   "auroc_lo": 95.66,
+   "auroc_hi": 99.78,
+   "tpr@1%fpr": 83.33,
+   "n": 30
+  },
+  {
+   "dataset": "XSum",
+   "method": "likelihood@pert_subset",
+   "n_pert": 0,
+   "auroc": 88.78,
+   "auroc_lo": 81.89,
+   "auroc_hi": 96.0,
+   "tpr@1%fpr": 13.33,
+   "n": 30
+  },
+  {
+   "dataset": "XSum",
+   "method": "logrank@pert_subset",
+   "n_pert": 0,
+   "auroc": 90.67,
+   "auroc_lo": 83.89,
+   "auroc_hi": 97.67,
+   "tpr@1%fpr": 6.67,
+   "n": 30
+  },
+  {
+   "dataset": "XSum",
+   "method": "LRR@pert_subset",
+   "n_pert": 0,
+   "auroc": 91.0,
+   "auroc_lo": 83.22,
+   "auroc_hi": 98.0,
+   "tpr@1%fpr": 6.67,
+   "n": 30
+  },
+  {
+   "dataset": "XSum",
+   "method": "DetectGPT",
+   "n_pert": 1,
+   "auroc": 73.0,
+   "auroc_lo": 59.11,
+   "auroc_hi": 86.45,
+   "tpr@1%fpr": 6.67,
+   "n": 30
+  },
+  {
+   "dataset": "XSum",
+   "method": "NPR",
+   "n_pert": 1,
+   "auroc": 81.56,
+   "auroc_lo": 69.89,
+   "auroc_hi": 91.12,
+   "tpr@1%fpr": 30.0,
+   "n": 30
+  },
+  {
+   "dataset": "XSum",
+   "method": "DetectGPT",
+   "n_pert": 5,
+   "auroc": 77.0,
+   "auroc_lo": 64.44,
+   "auroc_hi": 87.12,
+   "tpr@1%fpr": 0.0,
+   "n": 30
+  },
+  {
+   "dataset": "XSum",
+   "method": "NPR",
+   "n_pert": 5,
+   "auroc": 94.11,
+   "auroc_lo": 89.11,
+   "auroc_hi": 98.22,
+   "tpr@1%fpr": 56.67,
+   "n": 30
+  },
+  {
+   "dataset": "XSum",
+   "method": "DetectGPT",
+   "n_pert": 10,
+   "auroc": 82.11,
+   "auroc_lo": 71.78,
+   "auroc_hi": 91.44,
+   "tpr@1%fpr": 10.0,
+   "n": 30
+  },
+  {
+   "dataset": "XSum",
+   "method": "NPR",
+   "n_pert": 10,
+   "auroc": 93.89,
+   "auroc_lo": 89.55,
+   "auroc_hi": 97.67,
+   "tpr@1%fpr": 60.0,
+   "n": 30
+  }
+ ],
+ "E2_tests": [
+  {
+   "dataset": "SQuAD",
+   "A": "NPR_10",
+   "B": "DetectGPT_10",
+   "AUROC(A)-AUROC(B) x100": 3.78,
+   "95% CI": "[-0.78, 10.78]",
+   "P(A not better)": 0.07
+  },
+  {
+   "dataset": "SQuAD",
+   "A": "NPR_10",
+   "B": "LRR",
+   "AUROC(A)-AUROC(B) x100": -0.78,
+   "95% CI": "[-7.56, 6.89]",
+   "P(A not better)": 0.535
+  },
+  {
+   "dataset": "SQuAD",
+   "A": "LRR",
+   "B": "DetectGPT_10",
+   "AUROC(A)-AUROC(B) x100": 4.56,
+   "95% CI": "[-4.89, 15.00]",
+   "P(A not better)": 0.198
+  },
+  {
+   "dataset": "WritingPrompts",
+   "A": "NPR_10",
+   "B": "DetectGPT_10",
+   "AUROC(A)-AUROC(B) x100": 3.22,
+   "95% CI": "[-0.44, 7.56]",
+   "P(A not better)": 0.044
+  },
+  {
+   "dataset": "WritingPrompts",
+   "A": "NPR_10",
+   "B": "LRR",
+   "AUROC(A)-AUROC(B) x100": 0.0,
+   "95% CI": "[-2.78, 3.00]",
+   "P(A not better)": 0.539
+  },
+  {
+   "dataset": "WritingPrompts",
+   "A": "LRR",
+   "B": "DetectGPT_10",
+   "AUROC(A)-AUROC(B) x100": 3.22,
+   "95% CI": "[-0.33, 7.33]",
+   "P(A not better)": 0.048
+  },
+  {
+   "dataset": "XSum",
+   "A": "NPR_10",
+   "B": "DetectGPT_10",
+   "AUROC(A)-AUROC(B) x100": 11.78,
+   "95% CI": "[4.33, 21.89]",
+   "P(A not better)": 0.001
+  },
+  {
+   "dataset": "XSum",
+   "A": "NPR_10",
+   "B": "LRR",
+   "AUROC(A)-AUROC(B) x100": 2.89,
+   "95% CI": "[-4.33, 10.44]",
+   "P(A not better)": 0.26
+  },
+  {
+   "dataset": "XSum",
+   "A": "LRR",
+   "B": "DetectGPT_10",
+   "AUROC(A)-AUROC(B) x100": 8.89,
+   "95% CI": "[-3.78, 23.22]",
+   "P(A not better)": 0.09
+  }
+ ],
+ "E3": [
+  {
+   "dataset": "XSum",
+   "method": "LRR",
+   "mean": 92.7,
+   "std": 1.27,
+   "min": 91.42,
+   "max": 93.95,
+   "count": 3
+  },
+  {
+   "dataset": "XSum",
+   "method": "entropy",
+   "mean": 55.68,
+   "std": 1.7,
+   "min": 53.87,
+   "max": 57.25,
+   "count": 3
+  },
+  {
+   "dataset": "XSum",
+   "method": "likelihood",
+   "mean": 87.9,
+   "std": 1.66,
+   "min": 86.24,
+   "max": 89.55,
+   "count": 3
+  },
+  {
+   "dataset": "XSum",
+   "method": "logrank",
+   "mean": 90.82,
+   "std": 1.32,
+   "min": 89.45,
+   "max": 92.08,
+   "count": 3
+  },
+  {
+   "dataset": "XSum",
+   "method": "rank",
+   "mean": 79.22,
+   "std": 1.93,
+   "min": 77.0,
+   "max": 80.38,
+   "count": 3
+  }
+ ],
+ "E3_best": [
+  {
+   "dataset": "XSum",
+   "seed": 0,
+   "best method": "LRR"
+  },
+  {
+   "dataset": "XSum",
+   "seed": 1,
+   "best method": "LRR"
+  },
+  {
+   "dataset": "XSum",
+   "seed": 2,
+   "best method": "LRR"
+  }
+ ],
+ "E4-decoding": [
+  {
+   "dataset": "XSum",
+   "tag": "E1 default (T=1, top-k=50, full length, fp32)",
+   "LRR": 92.74,
+   "entropy": 53.87,
+   "likelihood": 89.55,
+   "logrank": 92.08,
+   "rank": 80.29
+  },
+  {
+   "dataset": "XSum",
+   "tag": "T0.7",
+   "LRR": 99.78,
+   "entropy": 52.94,
+   "likelihood": 99.61,
+   "logrank": 99.79,
+   "rank": 81.43
+  },
+  {
+   "dataset": "XSum",
+   "tag": "pure",
+   "LRR": 23.08,
+   "entropy": 75.67,
+   "likelihood": 29.84,
+   "logrank": 27.38,
+   "rank": 27.8
+  },
+  {
+   "dataset": "XSum",
+   "tag": "topp0.96",
+   "LRR": 38.27,
+   "entropy": 63.18,
+   "likelihood": 60.13,
+   "logrank": 56.01,
+   "rank": 63.68
+  }
+ ],
+ "E4-length": [
+  {
+   "dataset": "SQuAD",
+   "tag": "100w",
+   "LRR": 93.92,
+   "entropy": 58.62,
+   "likelihood": 85.93,
+   "logrank": 90.75,
+   "rank": 74.86
+  },
+  {
+   "dataset": "SQuAD",
+   "tag": "25w",
+   "LRR": 52.97,
+   "entropy": 49.78,
+   "likelihood": 53.23,
+   "logrank": 53.25,
+   "rank": 51.08
+  },
+  {
+   "dataset": "SQuAD",
+   "tag": "50w",
+   "LRR": 78.81,
+   "entropy": 56.2,
+   "likelihood": 69.46,
+   "logrank": 74.0,
+   "rank": 63.47
+  },
+  {
+   "dataset": "SQuAD",
+   "tag": "E1 default (T=1, top-k=50, full length, fp32)",
+   "LRR": 97.83,
+   "entropy": 55.36,
+   "likelihood": 91.55,
+   "logrank": 95.12,
+   "rank": 82.01
+  },
+  {
+   "dataset": "WritingPrompts",
+   "tag": "100w",
+   "LRR": 94.85,
+   "entropy": 42.51,
+   "likelihood": 93.36,
+   "logrank": 95.0,
+   "rank": 84.1
+  },
+  {
+   "dataset": "WritingPrompts",
+   "tag": "25w",
+   "LRR": 53.73,
+   "entropy": 50.2,
+   "likelihood": 54.04,
+   "logrank": 53.95,
+   "rank": 51.92
+  },
+  {
+   "dataset": "WritingPrompts",
+   "tag": "50w",
+   "LRR": 83.09,
+   "entropy": 49.92,
+   "likelihood": 83.08,
+   "logrank": 84.77,
+   "rank": 71.13
+  },
+  {
+   "dataset": "WritingPrompts",
+   "tag": "E1 default (T=1, top-k=50, full length, fp32)",
+   "LRR": 98.71,
+   "entropy": 33.59,
+   "likelihood": 96.28,
+   "logrank": 97.89,
+   "rank": 90.91
+  },
+  {
+   "dataset": "XSum",
+   "tag": "100w",
+   "LRR": 89.18,
+   "entropy": 56.44,
+   "likelihood": 86.04,
+   "logrank": 88.71,
+   "rank": 74.6
+  },
+  {
+   "dataset": "XSum",
+   "tag": "25w",
+   "LRR": 51.26,
+   "entropy": 49.9,
+   "likelihood": 53.22,
+   "logrank": 53.23,
+   "rank": 51.17
+  },
+  {
+   "dataset": "XSum",
+   "tag": "50w",
+   "LRR": 70.98,
+   "entropy": 54.94,
+   "likelihood": 72.42,
+   "logrank": 73.89,
+   "rank": 61.86
+  },
+  {
+   "dataset": "XSum",
+   "tag": "E1 default (T=1, top-k=50, full length, fp32)",
+   "LRR": 92.74,
+   "entropy": 53.87,
+   "likelihood": 89.55,
+   "logrank": 92.08,
+   "rank": 80.29
+  }
+ ],
+ "E5": [
+  {
+   "exp": "E5-arabic",
+   "dataset": "Arabic Wikipedia",
+   "generator": "AraGPT2-M",
+   "scorer": "AraGPT2-M",
+   "LRR": 99.45,
+   "entropy": 21.77,
+   "likelihood": 98.54,
+   "logrank": 99.11,
+   "rank": 89.3
+  },
+  {
+   "exp": "E5-arabic",
+   "dataset": "Arabic Wikipedia",
+   "generator": "Qwen2.5-1.5B",
+   "scorer": "Qwen2.5-1.5B",
+   "LRR": 86.26,
+   "entropy": 63.28,
+   "likelihood": 65.42,
+   "logrank": 71.58,
+   "rank": 86.37
+  },
+  {
+   "exp": "E5-control",
+   "dataset": "XSum",
+   "generator": "Qwen2.5-1.5B",
+   "scorer": "Qwen2.5-1.5B",
+   "LRR": 91.93,
+   "entropy": 56.78,
+   "likelihood": 80.52,
+   "logrank": 86.29,
+   "rank": 75.32
+  },
+  {
+   "exp": "E5-cross",
+   "dataset": "Arabic Wikipedia",
+   "generator": "AraGPT2-M",
+   "scorer": "Qwen2.5-1.5B",
+   "LRR": 63.82,
+   "entropy": 52.38,
+   "likelihood": 58.99,
+   "logrank": 60.74,
+   "rank": 56.93
+  },
+  {
+   "exp": "E5-cross",
+   "dataset": "Arabic Wikipedia",
+   "generator": "Qwen2.5-1.5B",
+   "scorer": "AraGPT2-M",
+   "LRR": 23.87,
+   "entropy": 78.96,
+   "likelihood": 17.12,
+   "logrank": 15.67,
+   "rank": 13.73
+  }
+ ],
+ "E5_ci": [
+  {
+   "exp": "E5-control",
+   "dataset": "xsum",
+   "gen": "Qwen2.5-1.5B",
+   "model": "Qwen2.5-1.5B",
+   "auroc": 91.93,
+   "auroc_lo": 88.17,
+   "auroc_hi": 95.22
+  },
+  {
+   "exp": "E5-arabic",
+   "dataset": "arwiki",
+   "gen": "Qwen2.5-1.5B",
+   "model": "Qwen2.5-1.5B",
+   "auroc": 86.26,
+   "auroc_lo": 80.96,
+   "auroc_hi": 91.12
+  },
+  {
+   "exp": "E5-cross",
+   "dataset": "arwiki",
+   "gen": "Qwen2.5-1.5B",
+   "model": "AraGPT2-M",
+   "auroc": 23.87,
+   "auroc_lo": 18.41,
+   "auroc_hi": 29.05
+  },
+  {
+   "exp": "E5-cross",
+   "dataset": "arwiki",
+   "gen": "AraGPT2-M",
+   "model": "Qwen2.5-1.5B",
+   "auroc": 63.82,
+   "auroc_lo": 56.78,
+   "auroc_hi": 70.54
+  },
+  {
+   "exp": "E5-arabic",
+   "dataset": "arwiki",
+   "gen": "AraGPT2-M",
+   "model": "AraGPT2-M",
+   "auroc": 99.45,
+   "auroc_lo": 98.83,
+   "auroc_hi": 99.85
+  }
+ ],
+ "error_analysis": [
+  {
+   "dataset": "squad",
+   "gen": "gpt2-xl",
+   "type": "False-positive candidates",
+   "LRR": 2.1826752911234286,
+   "ll": -2.655435085296631,
+   "logrank": 1.2165964841842651,
+   "tokens": 168,
+   "text": "More commonly, in cases where there are three or more parties, no one party is likely to gain power alone, and parties work with each other to form coalition governments. This has been an emerging trend in the politics of the Republic of Ireland since the 1980s and is almost always the case in Germany on national and state level, and in most constituencies at the communal level. Furthermore, since the forming of the Republic of Iceland there has never been a government not led by a coalition (usually of the Independence Party and one other (often the Social Democratic Alliance). A similar situ"
+  },
+  {
+   "dataset": "squad",
+   "gen": "gpt2-xl",
+   "type": "False-positive candidates",
+   "LRR": 2.14913046961737,
+   "ll": -2.238361597061157,
+   "logrank": 1.0415196418762207,
+   "tokens": 173,
+   "text": "In September 2012 at the Tokyo Game Show, Sony announced that a new, slimmer PS3 redesign (CECH-4000) was due for release in late 2012 and that it would be available with either a 250 GB or 500 GB hard drive. Three versions Super Slim model were revealed: one with a 500 GB hard drive, a second with a 250 GB hard drive which is not available in PAL regions, and a third with a 12 GB flash storage that was only available in PAL regions. The storage of 12 GB model is upgradable with an official standalone 250 GB hard drive. A vertical stand was also released for the model. In the United Kingdom, t"
+  },
+  {
+   "dataset": "squad",
+   "gen": "gpt2-xl",
+   "type": "False-positive candidates",
+   "LRR": 2.108790024601477,
+   "ll": -2.130328893661499,
+   "logrank": 1.010213851928711,
+   "tokens": 212,
+   "text": "The city of Jerusalem is of special importance to Jews, Muslims and Christians as it is the home of sites that are pivotal to their religious beliefs, such as the Old City that incorporates the Western Wall and the Temple Mount, the Al-Aqsa Mosque and the Church of the Holy Sepulchre. Other locations of religious importance in Israel are Nazareth (holy in Christianity as the site of the Annunciation of Mary), Tiberias and Safed (two of the Four Holy Cities in Judaism), the White Mosque in Ramla (holy in Islam as the shrine of the prophet Saleh), and the Church of Saint George in Lod (holy in C"
+  },
+  {
+   "dataset": "squad",
+   "gen": "gpt2-xl",
+   "type": "False-negative candidates",
+   "LRR": 2.017978269703203,
+   "ll": -2.5906364917755127,
+   "logrank": 1.283778190612793,
+   "tokens": 198,
+   "text": "Terry Eastland, the author who wrote From Ending Affirmative Action: The Case for Colorblind Justice states, \"Most arguments for affirmative action fall apart when we focus only on minorities who are successful – who enjoy the benefits. The successful don't need affirmative action.\"  This is particularly important given that our criminal justice system, including in the context of student diversity, is increasingly focused on social issues such as race. These social issues are also the focus of anti-affirmative action policies and are often used as evidence that these policies don't work.   Bu"
+  },
+  {
+   "dataset": "squad",
+   "gen": "gpt2-xl",
+   "type": "False-negative candidates",
+   "LRR": 2.024261188158031,
+   "ll": -2.8157176971435547,
+   "logrank": 1.390985369682312,
+   "tokens": 199,
+   "text": "The last major building work took place during the reign of King George V when, in 1913, Sir Aston Webb redesigned Blore's 1850 East Front to become a modernist landmark. The entrance, made of concrete, was designed by Sir Christopher Wren, master of the Ritz Hotel. The interior opened to the public on 17 April 1915, and, in one of the biggest revamps of any building in London, the facade and the upper part of the building took this form. In the upper tier of the front room, three marble lion sculptures, two on either side of the entrance, were meant to suggest the lion in Greek statues and gi"
+  },
+  {
+   "dataset": "squad",
+   "gen": "gpt2-xl",
+   "type": "False-negative candidates",
+   "LRR": 2.024406123963633,
+   "ll": -2.6120169162750244,
+   "logrank": 1.290263295173645,
+   "tokens": 199,
+   "text": "Libya's economy witnessed increasing privatization; although rejecting the socialist policies of nationalized industry advocated in The Green Book, government figures asserted that they were forging ahead with privatization because of a perception that it would ensure prosperity for the nation. As Tripoli's national economy continued to rapidly expand, Libya's political opposition began to gain popularity, as Libya's nationalization policies proved a disastrous failure. During the war, the economic situation of Libya increased to catastrophic proportions, as Libyan oil production dropped to le"
+  },
+  {
+   "dataset": "writing",
+   "gen": "gpt2-xl",
+   "type": "False-positive candidates",
+   "LRR": 2.136066786038373,
+   "ll": -2.492384672164917,
+   "logrank": 1.1668102741241455,
+   "tokens": 210,
+   "text": "You wake up in a strange bed in a mysterious but somehow familiar room. After a few moments you realize you are four years old again. I am jolted awake with a burst of pain in my right arm. The last thing I remember was walking home after last night. I had just left the bar, as I was celebrating my 21st birthday a week late with my friends, and I was crossing the street. I am in my old bedroom, so I must have gone to my mom's house, given that is is closer to the bar than my own house. I sit up in bed, and my room looks different. I look down at my arm, and it is in a cast. The last time I was"
+  },
+  {
+   "dataset": "writing",
+   "gen": "gpt2-xl",
+   "type": "False-positive candidates",
+   "LRR": 2.108861974569425,
+   "ll": -2.4654829502105717,
+   "logrank": 1.169105887413025,
+   "tokens": 205,
+   "text": "You wake from a cryogenic sleep and find your ship has crash landed on an earthlike planet. Your crews cryogenic pods are empty. As I woke up, I could just make out that Ramirez's pod was empty. As I looked around, I saw that the others were empty as well. Strange, that I was the only one of us asleep for so long. I turned and looked out the window. This planet we were on looked a lot like Earth. I checked my radio for any signs of civilization here, but I could find none. We were definitely very far away from Earth. I saw the tent outside my window. It was white and black. I went inside it an"
+  },
+  {
+   "dataset": "writing",
+   "gen": "gpt2-xl",
+   "type": "False-positive candidates",
+   "LRR": 2.0919254138373744,
+   "ll": -2.5973715782165527,
+   "logrank": 1.2416176795959473,
+   "tokens": 188,
+   "text": "Someone you know feels alone and hopeless. Convince them that they are not. You are born alone. There is no one who is exactly like you. You live alone. There is no one that does exactly what you do. You die alone. There is no one with you in the moment when your life fades. But in this, you are not alone. We all share this inherent isolation. We all are born, live, and die alone. There is not one person who ever lived who did not experience this. We all share the empty world the same way, and we are all afraid of it. We cling to each other in the hopes we can find one like us, we strive to be"
+  },
+  {
+   "dataset": "writing",
+   "gen": "gpt2-xl",
+   "type": "False-negative candidates",
+   "LRR": 1.9932694887781468,
+   "ll": -2.676986694335937,
+   "logrank": 1.3430129289627075,
+   "tokens": 199,
+   "text": "[ CC ] [ PI ] C764 ~ would really appreciate some crit for this piece. I find it a bit difficult to envision the setting. Perhaps some sort of \"Celtic\" village. That would work for me. Maybe I'm just too much of a traditionalist at heart, but I really like the way the piece and background fits in. Thanks, though, for the critique anyways.   P.S. \"Sassuolo\" might be a bit more appropriate given the other pieces that you mentioned. I might change an otherwise perfect score!  0 User(s) found this post helpful.  Write a Review   Options   To review this item, click here   Description:  This is an "
+  },
+  {
+   "dataset": "writing",
+   "gen": "gpt2-xl",
+   "type": "False-negative candidates",
+   "LRR": 2.007852920538694,
+   "ll": -2.270799160003662,
+   "logrank": 1.130958914756775,
+   "tokens": 199,
+   "text": "[ CW ] Write a serial killer's to-do list I took some inspiration from a well liked TV Series. **Edit: ** Formatting hates on it a little so here's a .txt file of each item on the list: **T1. Get my son back. **T2. Get my sister back. **T3. Eat him.** **T4. Throw him out a second floor window.** **T5. Make a YouTube video of myself choking him to death.** **T6. Start killing random people on the street until my cell phone runs out of power, then call 999 to report a kidnapping.** **T7. Find a homeless person, tie him to a cross, and throw him in front of the train.** **T8. Find a black man, st"
+  },
+  {
+   "dataset": "writing",
+   "gen": "gpt2-xl",
+   "type": "False-negative candidates",
+   "LRR": 2.015844505551517,
+   "ll": -1.9095213413238523,
+   "logrank": 0.9472562670707704,
+   "tokens": 199,
+   "text": "[ CW ] Describe the room you're sitting in, maybe r/doodle will sketch it. This would be a test of how someone processes pictures and pictures in a live setting in real time. (Note: I have no knowledge of the moderators of r/doodle other than they follow the rules and are friendly and helpful. )  ] Describe the room you're sitting in, maybe r/doodle will sketch it. This would be a test of how someone processes pictures and pictures in a live setting in real time. (Note: I have no knowledge of the moderators of r/doodle other than they follow the rules and are friendly and helpful. ) Tell us wh"
+  },
+  {
+   "dataset": "xsum",
+   "gen": "gpt2-xl",
+   "type": "False-positive candidates",
+   "LRR": 2.334917411501733,
+   "ll": -1.914925217628479,
+   "logrank": 0.8201254606246948,
+   "tokens": 193,
+   "text": "Unemployment fell to 1.69 million between January and March, down 2,000 from the previous quarter. The jobless rate remained at 5.1%, the ONS said. There were 31.58 million people in work, up 44,000 from the previous quarter. That took the employment rate to a record high of 74.2%. But the number of job vacancies dropped by 18,000 to 745,000, the ONS added, marking the first fall for almost a year. David Freeman, a senior statistician at the ONS, said: \"The employment rate has hit another record high, but this time the increase is quite modest. \"With unemployment very little changed, that is f"
+  },
+  {
+   "dataset": "xsum",
+   "gen": "gpt2-xl",
+   "type": "False-positive candidates",
+   "LRR": 2.171049545483621,
+   "ll": -2.767479658126831,
+   "logrank": 1.2747197151184082,
+   "tokens": 186,
+   "text": "The party's election manifesto said a funding floor would only be introduced after a referendum was called. The St David's Day Agreement had said the vote would be an \"expectation\", and Labour Welsh ministers oppose a referendum before a funding deal. Labour accused the Tories of trying to hold them \"over a barrel\". The manifesto states the Conservatives would \"introduce a 'funding floor' to protect Welsh relative funding and provide certainty for the Welsh Government to plan for the future, once it has called a referendum on Income Tax powers in the next Parliament\". But a Welsh Conservative "
+  },
+  {
+   "dataset": "xsum",
+   "gen": "gpt2-xl",
+   "type": "False-positive candidates",
+   "LRR": 2.149645441646274,
+   "ll": -2.272873878479004,
+   "logrank": 1.057325005531311,
+   "tokens": 157,
+   "text": "Midfielder Arteta, 32, had a bony spur removed from his left ankle, which the club said has been causing him \"significant discomfort\" for months. Defender Debuchy, who just returned from three months out with an ankle injury, had an operation on a shoulder he dislocated in the win over Stoke. Boss Arsene Wenger described Debuchy's injury on Sunday as \"unbelievable\". \"It's very unfortunate,\" said the Frenchman. \"It's unbelievable because he's had two surgeries in the same season. He just came back, he played seven games and he's out again.\" Debuchy has played just 14 times since signing from Ne"
+  },
+  {
+   "dataset": "xsum",
+   "gen": "gpt2-xl",
+   "type": "False-negative candidates",
+   "LRR": 1.918925451851164,
+   "ll": -2.936568260192871,
+   "logrank": 1.530319094657898,
+   "tokens": 199,
+   "text": "The hashtag #penuriecarburantdansunfilm, which translates as \"fuel shortage in a film\", became France's top Twitter trend on Sunday evening, while another called #gastodentilenge (\"cancer patient's soup\") has almost been retweeted more than 20 000 times. \"A young French man took some bread and chopped it up,\" tweeted one user.  For months, the government has refused to allow anyone – at least not anyone willing to fill in forms – to use a fuel pump or pay for petrol at a petrol pump.  This month, people and organisations asked their MPs and a few members of the Socialist party to amend the gov"
+  },
+  {
+   "dataset": "xsum",
+   "gen": "gpt2-xl",
+   "type": "False-negative candidates",
+   "LRR": 1.934461590055229,
+   "ll": -2.8977091312408447,
+   "logrank": 1.4979408979415894,
+   "tokens": 199,
+   "text": "Charles Blackman's oil work Women Lovers features two nude women resting on a bed beside a cat. Art broker Mossgreen tried to promote it on eBay, but people who see it know that it's a sexual fantasy and not a sexual portrait. Women Lovers art, print, and poster  Laurie Anderson's Nude  A few years ago, in an apparent attempt to cash in on the latest trends, art director Jennifer Whelan arranged to have a private booth installed in The Museum of Modern Art's Contemporary Artist Pavilion; the work was designed in collaboration with Laurie Anderson, who worked on the installation. The work is ca"
+  },
+  {
+   "dataset": "xsum",
+   "gen": "gpt2-xl",
+   "type": "False-negative candidates",
+   "LRR": 1.953255063135673,
+   "ll": -1.8494170904159544,
+   "logrank": 0.9468384981155396,
+   "tokens": 156,
+   "text": "Sterling rose 1.86% against the dollar to $1.32.40, and was 1.73% higher against the euro at €1.2260 at 0710 GMT.  Marks rose 0.43% to $1.3260 in New York and was slightly down 0.15% at $1.3239 in London.  The euro fell 0.8% against the dollar and 0.4% against the yen to 108.13.  German Finance Minister Wolfgang Schaeuble urged EU leaders to use the \"political force\" of the bloc to avoid Brexit, but added \"we're not there yet\".  The eurozone's central bank (ECB) is due to hold its regular policy meeting on Wednesday."
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "Qwen/Qwen2.5-1.5B",
+   "type": "False-positive candidates",
+   "LRR": 2.230191926500242,
+   "ll": -1.831926941871643,
+   "logrank": 0.821421205997467,
+   "tokens": 165,
+   "text": "ولاية بن عروس هي إحدى ولايات الجمهورية التونسية الـ24. تقع الولاية في شمال البلاد وتكون مع ولايات تونس، أريانة ومنوبة إقليم تونس الكبرى. تم إحداثها في الثالث من ديسمبر سنة 1983. تبلغ مساحتها 790 كم² ويقطنها حوالي 631.842 نسمة (تعداد 2014) ومركزها مدينة بن عروس. التاريخ تأسست ولاية بن عروس حول مدينة بن عروس في 3 ديسمبر 1983، وتتكون من 12 معتمدية، 11 بلدية و 75 عمادة. الجغرافيا تقع ولاية"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "Qwen/Qwen2.5-1.5B",
+   "type": "False-positive candidates",
+   "LRR": 2.2074034094370902,
+   "ll": -1.9068050384521484,
+   "logrank": 0.8638226389884949,
+   "tokens": 171,
+   "text": "حبيب سليم أبو شهلا (1902-1957)، سياسي لبناني يحمل الدكتوراه في الحقوق، وأحد رجال الاستقلال في لبنان، كان رئيساً لمجلس النواب اللبناني (1946-1947)، وعضوًا فيه لعدة دورات . تولى منصب نائب رئيس الوزراء في حكومتي رياض الصلح الأولى والثانية (1943-1945) وكان وزيرا للتربية الوطنية ووزيرا للعدلية في نفس الحكومة. نشأته ولد في بيروت في العام 1902، ودرس في مدارسها، ثم درس الحقوق في الجامعة الأمريكية في بيروت، وبعدها انتقل إلى فرنسا ونال الدكتوراه من"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "Qwen/Qwen2.5-1.5B",
+   "type": "False-positive candidates",
+   "LRR": 2.148764565126061,
+   "ll": -1.9282182455062864,
+   "logrank": 0.8973613381385803,
+   "tokens": 178,
+   "text": "الخطوط الجوية الفلسطينية هي شركة خطوط جوية تتمركز في قطاع غزة في الأراضي الفلسطينية المحتلة. كانت هذه الشركة تقدم خدماتها من غزة إلى الشرق الأوسط وشمال أفريقيا، كما تقوم بنقل الحجاج إلى مطار جدة. كان مقرها الرئيسي هو مطار ياسر عرفات الدولي، ومنذ العام عام 2012 كانت تعمل من مطار العريش الدولي. أُعلن في نهاية عام 2020 عن إغلاق الخطوط الجوية الفلسطينية. الخطوط الجوية الفلسطينية هي أيضاً عضو في الاتحاد العربي للنقل الجوي. تاريخ الشركة تأسست الشركة في الأول من يناير 1995 وبدأت أعمالها في يونيو 1997 بسلسلة من الرحلات الجوية لنقل الحجاج إلى جدة."
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "Qwen/Qwen2.5-1.5B",
+   "type": "False-negative candidates",
+   "LRR": 1.905487833352012,
+   "ll": -2.724034070968628,
+   "logrank": 1.4295730590820312,
+   "tokens": 199,
+   "text": "حبيب سليم أبو شهلا (1902-1957)، سياسي لبناني يحمل الدكتوراه في الحقوق، وأستاذ جامعي، شيخ الجماعة التجمعية في لبنان لسنتين وتسعه سبيلا أخرجه رئيس حكومة المهندس صدقي الق registrar من العقارات. شقيقين لصاحب المال بينهما: زيدون شهلا الحاصل على الدكتوراه، ونجم في ازكي للرقصان. شقيقين: شهلا الحاصل على الدكتوراه، وعلي بيت حسن الأكاديمي، ومتاجا حشّصا عضو المجلس الدستوري البابلي سابقا وأخا حبيب شهلا حكم عليه بالأشس في النور. المولد: 15 تموز 1902، خلفه زيدون أبو شهلا نص"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "Qwen/Qwen2.5-1.5B",
+   "type": "False-negative candidates",
+   "LRR": 1.924328401536045,
+   "ll": -2.614879846572876,
+   "logrank": 1.3588532209396362,
+   "tokens": 197,
+   "text": "فيديادر سوراجبراساد نيبول ، روائي بريطاني ولد في عام 1932 في «شاغوان» ثم عاد إلى بلده حيث التحق بكلية مانشستر للفنون لدراسة الوجبات البسيطة. في عام 1962 شارك مع باقي اصدقاءه في تأليف مسلسل «أنت بيرتونيس»، وخلال حفر آبار النفط في البحرين بدأ بالعمل في البحرين فقام بتصميم أول دراجة نون بحرينية وبدأ تأسيس سكاي سفوت كولونة. أثناء تأسيسه لم يجد في بلده أي منتجات مصنعة في مثيلته فقام بتصنيع كل الأجهزة الخاصة به ونشرها مسبقا في الخارج وكانت أول أجهزة استشعار ومراقبة"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "Qwen/Qwen2.5-1.5B",
+   "type": "False-negative candidates",
+   "LRR": 1.9325422702803237,
+   "ll": -2.5764636993408203,
+   "logrank": 1.333199143409729,
+   "tokens": 197,
+   "text": "كولدفيوشن هو مجموعة معقدة ومشهورة من المنتجات لبناء المواقع على الإنترنت ولتزويد الزوار بمعلومات عن العديد من المجالات. تضم هذه المجموعة ما يصل إلى 500 مليون تحميل سنويًا. يعرض الموقع عدداً من الخدوم وتطبيقات عرض أكشن ومرتقبات ألعاب وبرامج ورسومات وبث مباشر ومطبوعات وصفحات مملوءة بالدعاية الإعلانية من أقدم الشركات، وتطبيقات التطبيقات مثل قاربك وألعاب ترفيهية مثل قلطة. كولدفيوشن يُعد أحد الموزعين لرسومات الفيديو المتاحة في منصات البث المباشرة من شركة بلسنتشر التي تمتلك أكثر من 95 ميليشيا رائعة، وهي التي توفر"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "aubmindlab/aragpt2-medium",
+   "type": "False-positive candidates",
+   "LRR": 1.904995162081392,
+   "ll": -5.106160640716553,
+   "logrank": 2.680406093597412,
+   "tokens": 237,
+   "text": "الجامعة المفتوحة الليبية إحدى مؤسسات التعليم الجامعي في ليبيا التابعة لوزارة التعليم، تسعى، ووفقا لقرار إنشائها عام 1987، إلى توفير التعليم والتدريب، ونشر الثقافة عن بعد لفئات المجتمع المختلفة من خلال مختلف البرامج والأنشطة، وعبر وسائل الاتصال المقروء، والمرئي، والمسموع، وبما يتناسب وحاجات أفراد المجتمع، ورغباتهم، وظروفهم، وإمكانياتهم. ويتميز التعليم بهذه المؤسسة بمزايا عديدة منها: المرونة، ومراعاة الفروق الفردية، واستقلالية وحرية المتعلم، والتنوع في الوسائل والطرق، والجمع بين الدراسة والعمل، والتعلم الذاتي، ومعقولية التكلفة المالية، واعتماد المؤهلات الممنوحة من قبل الدولة، وإتاحة الفرص لخريجى"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "aubmindlab/aragpt2-medium",
+   "type": "False-positive candidates",
+   "LRR": 1.885825158995365,
+   "ll": -3.9416756629943848,
+   "logrank": 2.0901596546173096,
+   "tokens": 218,
+   "text": "الخطوط الجوية الفلسطينية هي شركة خطوط جوية تتمركز في قطاع غزة في الأراضي الفلسطينية المحتلة. كانت هذه الشركة تقدم خدماتها من غزة إلى الشرق الأوسط وشمال أفريقيا، كما تقوم بنقل الحجاج إلى مطار جدة. كان مقرها الرئيسي هو مطار ياسر عرفات الدولي، ومنذ العام عام 2012 كانت تعمل من مطار العريش الدولي. أُعلن في نهاية عام 2020 عن إغلاق الخطوط الجوية الفلسطينية. الخطوط الجوية الفلسطينية هي أيضاً عضو في الاتحاد العربي للنقل الجوي. تاريخ الشركة تأسست الشركة في الأول من يناير 1995 وبدأت أعمالها في يونيو 1997 بسلسلة من الرحلات الجوية لنقل الحجاج إلى جدة. وقد كانت الرحالات في البداية تنطلق من غزة، ولكن بسبب ال"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "aubmindlab/aragpt2-medium",
+   "type": "False-positive candidates",
+   "LRR": 1.866767374407728,
+   "ll": -2.730920553207397,
+   "logrank": 1.462914228439331,
+   "tokens": 248,
+   "text": "ريكاردو فاز تي ، من مواليد 1 أكتوبر 1986 في لشبونة في البرتغال، لاعب كرة قدم برتغالي. بدأ مسيرته الكروية مع نادي فارينسي في موسم 2002/2003، وفي عام 2003 انتقل إلى نادي بولتون واندررز الإنجليزي، وهو يلعب معهم حتى الآن، وفي عام 2007 أعير إلى نادي هال سيتي، ولعب معهم 6 مباريات. روابط خارجية مراجع لاعبو كرة قدم رجالية مغتربون في إسكتلندا لاعبو كرة قدم رجالية مغتربون في الصين لاعبو كرة قدم رجالية مغتربون في اليونان لاعبو كرة قدم رجالية مغتربون في تركيا لاعبو كرة قدم رجالية برتغاليون لاعبو كرة قدم رجالية برتغاليون مغتربون لاعبو كرة قدم رجالية مغتربون في إنجلترا مهاجمو كرة قدم رجالية أشخاص على قيد ال"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "aubmindlab/aragpt2-medium",
+   "type": "False-negative candidates",
+   "LRR": 1.7760876395554557,
+   "ll": -1.2456440925598145,
+   "logrank": 0.7013415694236755,
+   "tokens": 199,
+   "text": "غيرترود بيل هي غيرترود مارغريت لوثيان بيل (مواليد 25 ربيع الأول 1285هـ/ 12 يوليو1868)؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟ ؟"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "aubmindlab/aragpt2-medium",
+   "type": "False-negative candidates",
+   "LRR": 1.792884120241751,
+   "ll": -3.874557256698608,
+   "logrank": 2.1610751152038574,
+   "tokens": 198,
+   "text": "لجش أو لكش (بالسومرية:𒉢𒁓𒆷𒆠) هي إحدى القرى التابعة لمحافظة عجلون ، تقع في حوض لواء بني كنانة التابع لمنطقة \" جلعاد \" .يقطن فيها 12 ألف نسمة بحسب تقديرات العام 2003 ، 90 بالمئة منهم مسلمون ، 8 بالمئة مسيحيين ، 90 بالمئة مسلمين ، ويبلغ عدد سكان تل الرمان التي تقع على سفوح الجبال بين تل الرمان وحميم 583 نسمة .وينحدر منها في اللواء عائلة السيد إبراهيم السيد موسى وهو محام مسيحي ووالدة شماس مسيحي من القرن الأول ، وابنها إبراهيم السيد موسى هو ابن الكاهن الأكبر .ولقد اشتهرت قرية جديا في القرن التاسع عشر بكونها من قرى عجلون التاريخية ذات التاريخ السياسي العريق , وكان يسكنها بنو يعرب وغيرهم من البدو النب"
+  },
+  {
+   "dataset": "arwiki",
+   "gen": "aubmindlab/aragpt2-medium",
+   "type": "False-negative candidates",
+   "LRR": 1.8095357883412,
+   "ll": -3.9463050365448,
+   "logrank": 2.1808383464813232,
+   "tokens": 199,
+   "text": "كنيس (בית כנסת بيت كنيست بالعبرية) أو صلاة أي بيت الاجتماع جمعه « - « ؛ إن صلاة الجمعة والجماعة فيه تكون جماعة ، فإذا صلى جماعة الجمع الأعظم في جماعة ، فالمكان الذي يصلي فيه هو : بيت الاجتماع .وقيل : إنما جعل الأمر كذلك ؛ لأن بيت الاجتماع يجتمع فيه الناس ؛ كما قال ابن الأثير . وقال مجاهد : « إن الجمعة والجماعة هي من أيام النحر ، يجتمعون في موضع يجتمعون فيه » .وذكر ابن إسحاق ، أنه لو صلى جماعة في يوم بعينه ، فالمكان الذي يصلي فيه هو : الموضع الذي كان يصلي فيه الجمعة والجماعة ، وقال مالك : « إنه إذا صلى الناس في مسجد آخر في البلد ، لم يخرج إلى المسجد عن المكان الذي صلى فيه الجمعة والجماعة » .وال"
+  }
+ ],
+ "timing": {
+  "gpu": "cpu",
+  "total_hours": 12.87,
+  "by_stage": [
+   {
+    "stage": "generate",
+    "count": 17,
+    "sum": 17595.04,
+    "mean": 1035.0,
+    "sum_min": 293.3
+   },
+   {
+    "stage": "load_data",
+    "count": 16,
+    "sum": 321.22,
+    "mean": 20.1,
+    "sum_min": 5.4
+   },
+   {
+    "stage": "load_mask_model",
+    "count": 3,
+    "sum": 49.49,
+    "mean": 16.5,
+    "sum_min": 0.8
+   },
+   {
+    "stage": "load_model",
+    "count": 22,
+    "sum": 973.5600000000001,
+    "mean": 44.3,
+    "sum_min": 16.2
+   },
+   {
+    "stage": "perturb",
+    "count": 3,
+    "sum": 3143.77,
+    "mean": 1047.9,
+    "sum_min": 52.4
+   },
+   {
+    "stage": "score",
+    "count": 28,
+    "sum": 17733.75,
+    "mean": 633.3,
+    "sum_min": 295.6
+   },
+   {
+    "stage": "score_perturbed",
+    "count": 3,
+    "sum": 6505.45,
+    "mean": 2168.5,
+    "sum_min": 108.4
+   }
+  ]
+ },
+ "data": {
+  "writing__gpt2-xl__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "fairseq writingPrompts.tar.gz (valid split)",
+   "n": 100,
+   "mean_words_human": 157.66,
+   "example_machine": "Aliens visit earth and are fascinated by other animals but find humans completely unremarkable. Hello, let me begin this report by stating just how thankful I am to the world of aliens and how much I appreciate the vast amount that you all do for free.\n\nI'm not a big celebrity on either Facebook or "
+  },
+  "xsum__gpt2-xl__seed1__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('EdinburghNLP/xsum',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 149.74,
+   "example_machine": "Researchers at Check Point said they found the malware, dubbed Judy, on about 50 apps in Google's Play Store. The apps contain code that sends infected apps to an infected phone to download the malware.\n\n\"Judy is basically a toolkits designed to deliver ransomware,\" Check Point's chief security offi"
+  },
+  "xsum__EleutherAI_gpt-neo-2.7B__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('EdinburghNLP/xsum',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 151.57,
+   "example_machine": "Maj Richard Scott, 40, is accused of driving at speeds of up to 95mph (153km/h) in bad weather before the smash occurred.\n\nBarrett's blood-alcohol level was found to be above the legal limit and so he was charged for driving a motor vehicle with a blood-alcohol level at or above the legal limit.\n\nTh"
+  },
+  "xsum__gpt2-xl__seed2__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('EdinburghNLP/xsum',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 151.28,
+   "example_machine": "Leeds striker Chris Wood tapped home Charlie Taylor's cross 15 minutes in. The hosts turned the game on its head with Abel Hernandez scoring from close range shortly afterwards.\n\nNordentage pulled a goal back in the 35th minute when Andy Lonergan struck home after a brilliant mix-up by the Leeds def"
+  },
+  "squad__EleutherAI_gpt-neo-2.7B__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('rajpurkar/squad',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 152.59,
+   "example_machine": "The Bush administration then turned its attention to Iraq, and argued the need to remove Saddam Hussein from power in Iraq had become urgent. Among the stated reasons for the war were Iraq's military capacity, and the country's ties with terrorism, and the likelihood of Iraq supplying weapons of mas"
+  },
+  "xsum__gpt2-xl__seed0__n100__T0.7_k50_p1.0.json": {
+   "source": "load_dataset('EdinburghNLP/xsum',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 146.98,
+   "example_machine": "Maj Richard Scott, 40, is accused of driving at speeds of up to 95mph (153km/h) in bad weather before the smash, which happened at around 7.30pm on the A5 near the A7 in Easton, Wiltshire.\n\nHis car collided head-on with a Mercedes-Benz, which was travelling in the opposite direction, at a speed of a"
+  },
+  "squad__facebook_opt-2.7b__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('rajpurkar/squad',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 152.52,
+   "example_machine": "The Bush administration then turned its attention to Iraq, and argued the need to remove Saddam Hussein from power in Iraq had become urgent. Among the stated reasons for the war were that Saddam Hussein was linked to al-Qaeda and other international terrorist groups, Iraq was using weapons of mass "
+  },
+  "xsum__gpt2-xl__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('EdinburghNLP/xsum',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 149.64,
+   "example_machine": "Maj Richard Scott, 40, is accused of driving at speeds of up to 95mph (153km/h) in bad weather before the smash in the town of Wirral, Merseyside.\n\nTameside Police Scotland and the Traffic Haulage Association (THA) are jointly looking into whether he was distracted by tablets or driving while his at"
+  },
+  "squad__gpt2-xl__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('rajpurkar/squad',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 154.65,
+   "example_machine": "The Bush administration then turned its attention to Iraq, and argued the need to remove Saddam Hussein from power in Iraq had become urgent. Among the stated reasons for the war were Iraq's military capacity to destroy the country, Iraq's support for international terrorism and the dangers posed by"
+  },
+  "arwiki__aubmindlab_aragpt2-medium__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('wikimedia/wikipedia', '20231101.ar') streaming, first 30000 articles",
+   "n": 100,
+   "mean_words_human": 165.59,
+   "example_machine": "الجرجير المزروع أو ، نبات من الخضروات الورقية، مثل الخس، وهو عشب حولي ينمو في التربة الرطبة وعلى أطراف القنوات والجداول ، ويميل إلى اللون الأرجواني ، وله رائحة عطرية وطعمه حريف وزيوته عطرية وثماره صغيرة .وهو نبات معمر صغير ، ينمو في المناطق المعتدلة وفي مناطق البحر الأبيض المتوسط .تبدأ زراعته قبل نه"
+  },
+  "xsum__facebook_opt-2.7b__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('EdinburghNLP/xsum',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 146.55,
+   "example_machine": "Maj Richard Scott, 40, is accused of driving at speeds of up to 95mph (153km/h) in bad weather before the crash. His parents claim that he suffers from PTSD after suffering \"agonising\" attacks after the crash.\n\nThe High Court, in London, heard how the captain's father and stepmother were in the car "
+  },
+  "xsum__Qwen_Qwen2.5-1.5B__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('EdinburghNLP/xsum',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 147.72,
+   "example_machine": "Maj Richard Scott, 40, is accused of driving at speeds of up to 95mph (153km/h) in areas with no speed limit.\nThe crash on 19 July sent two 21-years-olds to hospital.\nScott's insurance company has told the BBC a payout of about £50,000 may be offered to the victims' families.\nScott, from Cresswell H"
+  },
+  "xsum__gpt2-xl__seed0__n100__T1.0_k0_p0.96.json": {
+   "source": "load_dataset('EdinburghNLP/xsum',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 148.99,
+   "example_machine": "Maj Richard Scott, 40, is accused of driving at speeds of up to 95mph (153km/h) in bad weather before the smash in the summer of 2013.\n\nBut Police Scotland revealed that there was no real intelligence – and no evidence – that Mr Wilcox was on a dangerous mission.\n\nScotpen Ross, 46, told neighbours t"
+  },
+  "arwiki__Qwen_Qwen2.5-1.5B__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "load_dataset('wikimedia/wikipedia', '20231101.ar') streaming, first 30000 articles",
+   "n": 100,
+   "mean_words_human": 75.14,
+   "example_machine": "الجرجير المزروع أو ، نبات من الخضروات الورقية، مثل الخس، وهو عشب حولي ينتج ثماره مفرغة اللون ويقال أنه يشبه القش ويعتقد أن الجيرز هو أنواع العشب الطبي، وهو مشتت عند حدوث جفاف الماء أو أثناء فصامه في موسم الصيف، ويتميز بالفوائد والخصائص الطبية.\nوالجرجير هو نبات من الخضروات الورقية، ينتج ثماره مفرغة ا"
+  },
+  "writing__facebook_opt-2.7b__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "fairseq writingPrompts.tar.gz (valid split)",
+   "n": 100,
+   "mean_words_human": 146.42,
+   "example_machine": "Aliens visit earth and are fascinated by other animals but find humans completely unremarkable. Hello, let me begin this report by stating just how thankful I am to be standing here in this room as you are gathered here to celebrate the 100th birthday of the most famous cat since, well, ever. You’ll"
+  },
+  "writing__EleutherAI_gpt-neo-2.7B__seed0__n100__T1.0_k50_p1.0.json": {
+   "source": "fairseq writingPrompts.tar.gz (valid split)",
+   "n": 100,
+   "mean_words_human": 159.98,
+   "example_machine": "Aliens visit earth and are fascinated by other animals but find humans completely unremarkable. Hello, let me begin this report by stating just how thankful I am to the world for not destroying my entire world. With a history that goes all the way back to early 2015, when this report first began lif"
+  },
+  "xsum__gpt2-xl__seed0__n100__T1.0_k0_p1.0.json": {
+   "source": "load_dataset('EdinburghNLP/xsum',) {'split': 'train', 'cache_dir': None}",
+   "n": 100,
+   "mean_words_human": 147.46,
+   "example_machine": "Maj Richard Scott, 40, is accused of driving at speeds of up to 95mph (153km/h) in bad weather before the smash in the summer of 2013. Speed traps at parts of the road are no longer being enforced – and speed camera revenues have plummeted this year. The road stretches from the Salt Barrier at Cable"
+  }
+ }
+}

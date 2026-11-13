@@ -87,6 +87,28 @@ def main(res_dir: str):
                 f.write(f"\nMean gain ours: {cl['gain ours'].mean():.2f} | mean gain paper (same 3 models): "
                         f"{cl['gain paper'].mean():.2f} | paper's 7-model claim: {CLAIMS['LRR_gain_over_best_perturbation_free']}\n")
                 f.write(f"LRR best in {int(cl['LRR is best (ours)'].sum())}/{len(cl)} settings (ours)\n")
+        # paired bootstrap: LRR minus the best other perturbation-free criterion, on the same texts
+        pt = []
+        for exp in ["E1", "E3", "E5-arabic", "E5-control"]:
+            for rid in df[df.exp == exp].run_id.unique():
+                path = os.path.join(res_dir, "scores", rid + ".csv")
+                if not os.path.exists(path):
+                    continue
+                sc = pd.read_csv(path)
+                old = "stat_ll" not in sc            # older files: duplicated raw "logrank" column
+                col = {m: (m + ".1" if old and m == "logrank" else m) for m in ["likelihood", "rank", "logrank", "entropy"]}
+                rr = df[df.run_id == rid]
+                best = max(col, key=lambda m: rr[rr.method == m].auroc.iloc[0])
+                h, m = sc[sc.label == 0], sc[sc.label == 1]
+                d_, lo, hi, p = MET.paired_bootstrap_diff(h.LRR.values, m.LRR.values, h[col[best]].values,
+                                                          m[col[best]].values, n_boot=2000)
+                pt.append({"exp": exp, "dataset": DS[rr.dataset.iloc[0]], "generator": SHORT.get(rr.generator.iloc[0]),
+                           "seed": int(rr.seed.iloc[0]), "best other": best, "LRR - best x100": round(100 * d_, 2),
+                           "95% CI": f"[{100*lo:.2f}, {100*hi:.2f}]", "P(LRR not better)": round(p, 3),
+                           "significant": bool(lo > 0)})
+        with open(os.path.join(out, "E1_paired_tests.md"), "w") as f:
+            f.write("## LRR minus best other perturbation-free criterion (paired bootstrap, 2000 resamples)\n\n" + md(pd.DataFrame(pt)))
+        summary["E1_paired"] = pt
         summary["E1"] = t1.to_dict("records")
         summary["E1_claim"] = cl.to_dict("records")
 
@@ -249,6 +271,8 @@ def main(res_dir: str):
             if not os.path.exists(path):
                 continue
             sc = pd.read_csv(path)
+            # raw statistics: "stat_ll"/"stat_logrank" (new) or "ll"/"logrank" (files written before v1.0.1)
+            LL, LR = ("stat_ll", "stat_logrank") if "stat_ll" in sc else ("ll", "logrank")
             d = df[df.run_id == rid].dataset.iloc[0]
             h = sc[sc.label == 0].sort_values("LRR", ascending=False)
             m = sc[sc.label == 1].sort_values("LRR")
@@ -262,16 +286,16 @@ def main(res_dir: str):
             ok = mh[mh.LRR > thr]
             if len(fn) and len(ok):
                 lines.append(f"Missed machine texts vs detected: mean tokens {fn.n_tokens.mean():.0f} vs {ok.n_tokens.mean():.0f}; "
-                             f"mean log p {fn.ll.mean():.2f} vs {ok.ll.mean():.2f}; mean log-rank {fn.logrank.mean():.2f} vs {ok.logrank.mean():.2f}\n")
+                             f"mean log p {fn[LL].mean():.2f} vs {ok[LL].mean():.2f}; mean log-rank {fn[LR].mean():.2f} vs {ok[LR].mean():.2f}\n")
             for title, part in [("False-positive candidates (human, highest LRR)", h.head(3)),
                                 ("False-negative candidates (machine, lowest LRR)", m.head(3))]:
                 lines.append(f"\n**{title}**\n")
                 for _, r in part.iterrows():
                     txt = str(r.text).replace("\n", " ")
-                    lines.append(f"- LRR={r.LRR:.3f}, log p={r.ll:.2f}, log-rank={r.logrank:.2f}, tokens={r.n_tokens}: "
+                    lines.append(f"- LRR={r.LRR:.3f}, log p={r[LL]:.2f}, log-rank={r[LR]:.2f}, tokens={r.n_tokens}: "
                                  f"\"{txt[:420]}{'...' if len(txt) > 420 else ''}\"\n")
-                    ea.append({"dataset": d, "gen": gen, "type": title.split(" (")[0], "LRR": r.LRR, "ll": r.ll,
-                               "logrank": r.logrank, "tokens": r.n_tokens, "text": txt[:600]})
+                    ea.append({"dataset": d, "gen": gen, "type": title.split(" (")[0], "LRR": r.LRR, "ll": r[LL],
+                               "logrank": r[LR], "tokens": r.n_tokens, "text": txt[:600]})
     with open(os.path.join(out, "error_analysis.md"), "w") as f:
         f.writelines(lines)
     summary["error_analysis"] = ea
