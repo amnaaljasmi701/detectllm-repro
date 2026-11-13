@@ -1,0 +1,224 @@
+# Runs the whole reproduction on free GitHub-hosted CPU runners (public repositories).
+# Trigger: Actions tab -> 'Reproduce DetectLLM' -> Run workflow, or push a commit whose message
+# contains [run] (all experiments) or [test] (unit tests + smoke run only).
+# Results are merged, aggregated and committed to the `results` branch.
+name: Reproduce DetectLLM
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+permissions:
+  contents: write
+env:
+  HF_HUB_DISABLE_PROGRESS_BARS: '1'
+  TOKENIZERS_PARALLELISM: 'false'
+  PYTHONUNBUFFERED: '1'
+jobs:
+  tests:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[run]') || contains(github.event.head_commit.message, '[test]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: pip
+    - name: install (CPU PyTorch)
+      run: pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
+    - name: unit tests (incl. GPU-code checks on CPU)
+      run: python -m pytest -q tests
+    - name: smoke run (GPT-2 small, SQuAD, n=20)
+      run: python scripts/run.py --preset smoke --out results/smoke && python scripts/aggregate.py --results results/smoke && cat results/smoke/summary/E1_main.md
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: smoke
+        path: results/smoke
+        retention-days: 7
+  base:
+    needs: tests
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[run]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        shard:
+        - gptxl-xsum
+        - gptxl-squad
+        - gptxl-writing
+    steps:
+    - uses: actions/checkout@v4
+    - name: free disk space
+      run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true; df -h /
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: pip
+    - name: install (CPU PyTorch)
+      run: pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
+    - uses: actions/download-artifact@v4
+      if: startsWith(matrix.shard, 'e2-')
+      with:
+        name: shard-gptxl-${{ matrix.shard == 'e2-xsum' && 'xsum' || (matrix.shard == 'e2-squad' && 'squad' || 'writing') }}
+        path: results/shards/${{ matrix.shard }}
+    - name: run ${{ matrix.shard }}
+      run: python scripts/run.py --preset ci --shard ${{ matrix.shard }} --out results/shards/${{ matrix.shard }}
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: shard-${{ matrix.shard }}
+        retention-days: 30
+        if-no-files-found: warn
+        path: 'results/shards/${{ matrix.shard }}/results.jsonl
+
+          results/shards/${{ matrix.shard }}/timing.jsonl
+
+          results/shards/${{ matrix.shard }}/errors.log
+
+          results/shards/${{ matrix.shard }}/data
+
+          results/shards/${{ matrix.shard }}/stats
+
+          results/shards/${{ matrix.shard }}/scores'
+  e2:
+    needs: base
+    if: always() && needs.base.result != 'skipped' && needs.base.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      matrix:
+        shard:
+        - e2-xsum
+        - e2-squad
+        - e2-writing
+    steps:
+    - uses: actions/checkout@v4
+    - name: free disk space
+      run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true; df -h /
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: pip
+    - name: install (CPU PyTorch)
+      run: pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
+    - uses: actions/download-artifact@v4
+      if: startsWith(matrix.shard, 'e2-')
+      with:
+        name: shard-gptxl-${{ matrix.shard == 'e2-xsum' && 'xsum' || (matrix.shard == 'e2-squad' && 'squad' || 'writing') }}
+        path: results/shards/${{ matrix.shard }}
+    - name: run ${{ matrix.shard }}
+      run: python scripts/run.py --preset ci --shard ${{ matrix.shard }} --out results/shards/${{ matrix.shard }}
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: shard-${{ matrix.shard }}
+        retention-days: 30
+        if-no-files-found: warn
+        path: 'results/shards/${{ matrix.shard }}/results.jsonl
+
+          results/shards/${{ matrix.shard }}/timing.jsonl
+
+          results/shards/${{ matrix.shard }}/errors.log
+
+          results/shards/${{ matrix.shard }}/data
+
+          results/shards/${{ matrix.shard }}/stats
+
+          results/shards/${{ matrix.shard }}/scores'
+  rest:
+    needs: tests
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[run]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 16
+      matrix:
+        shard:
+        - neo-xsum
+        - neo-squad
+        - neo-writing
+        - opt-xsum
+        - opt-squad
+        - opt-writing
+        - seed1-xsum
+        - seed1-squad
+        - seed2-xsum
+        - seed2-squad
+        - dec-pure
+        - dec-topk40
+        - dec-topp0.96
+        - dec-T0.7
+        - ar-main
+        - ar-control
+    steps:
+    - uses: actions/checkout@v4
+    - name: free disk space
+      run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true; df -h /
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: pip
+    - name: install (CPU PyTorch)
+      run: pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt
+    - uses: actions/download-artifact@v4
+      if: startsWith(matrix.shard, 'e2-')
+      with:
+        name: shard-gptxl-${{ matrix.shard == 'e2-xsum' && 'xsum' || (matrix.shard == 'e2-squad' && 'squad' || 'writing') }}
+        path: results/shards/${{ matrix.shard }}
+    - name: run ${{ matrix.shard }}
+      run: python scripts/run.py --preset ci --shard ${{ matrix.shard }} --out results/shards/${{ matrix.shard }}
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: shard-${{ matrix.shard }}
+        retention-days: 30
+        if-no-files-found: warn
+        path: 'results/shards/${{ matrix.shard }}/results.jsonl
+
+          results/shards/${{ matrix.shard }}/timing.jsonl
+
+          results/shards/${{ matrix.shard }}/errors.log
+
+          results/shards/${{ matrix.shard }}/data
+
+          results/shards/${{ matrix.shard }}/stats
+
+          results/shards/${{ matrix.shard }}/scores'
+  collect:
+    needs:
+    - base
+    - e2
+    - rest
+    if: always() && needs.base.result != 'skipped'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - run: pip install pandas scikit-learn matplotlib numpy
+    - uses: actions/download-artifact@v4
+      with:
+        pattern: shard-*
+        path: results/shards
+    - run: python scripts/merge_shards.py --shards results/shards --out results/full
+    - run: python scripts/aggregate.py --results results/full
+    - name: commit results to the results branch
+      run: 'git config user.name "github-actions[bot]"
+
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git checkout -B results
+
+        git add -f results/full/results.jsonl results/full/timing.jsonl results/full/summary results/full/scores results/full/data
+
+        [ -f results/full/errors.log ] && git add -f results/full/errors.log || true
+
+        git commit -m "Results of workflow run ${{ github.run_id }}" || echo "nothing to commit"
+
+        git push -f origin results'

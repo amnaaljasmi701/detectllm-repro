@@ -1,0 +1,5 @@
+{"stage": "load_model", "what": "gpt2-onnx", "seconds": 0.0, "python": "3.13.16", "machine": "x86_64", "gpu": "cpu (no torch)"}
+{"stage": "load_data", "what": "squad", "seconds": 0.17, "pool": 44, "python": "3.13.16", "machine": "x86_64", "gpu": "cpu (no torch)"}
+{"stage": "generate", "what": "squad__gpt2-onnx__seed0__n50__T1.0_k50_p1.0", "seconds": 1052.16, "n": 44, "python": "3.13.16", "machine": "x86_64", "gpu": "cpu (no torch)"}
+{"stage": "score", "what": "squad__gpt2-onnx__seed0__n50__T1.0_k50_p1.0__scorer=gpt2-onnx__auto", "seconds": 46.64, "n": 88, "python": "3.13.16", "machine": "x86_64", "gpu": "cpu (no torch)"}
+{"stage": "score", "what": "squad__gpt2-onnx__seed0__n50__T1.0_k50_p1.0__scorer=gpt2-onnx__auto__trunc50", "seconds": 13.76, "n": 88, "python": "3.13.16", "machine": "x86_64", "gpu": "cpu (no torch)"}
